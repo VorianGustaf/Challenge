@@ -10,4 +10,8 @@ const angka = [1, 3, 6, 8, 11];
 const hasil =angka.filter(function(angka) {
   return angka > 5;
 });
-console.log(hasil); // 
+console.log(hasil);
+
+//  fungsi findInddex
+const nomor =[2,5,6,9,12];
+
