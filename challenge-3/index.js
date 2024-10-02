@@ -18,4 +18,10 @@ const isLargeNumber = (element) => element > 6;
 
 console.log(nomor.findIndex(isLargeNumber));
 
-// 
+// shif
+const array1 = [1, 2, 3];
+
+console.log(array1.unshift( 7,8,9));
+
+console.log(array1);
+
