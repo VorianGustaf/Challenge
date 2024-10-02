@@ -14,4 +14,8 @@ console.log(hasil);
 
 //  fungsi findInddex
 const nomor =[2,5,6,9,12];
+const isLargeNumber = (element) => element > 6;
 
+console.log(nomor.findIndex(isLargeNumber));
+
+// 
