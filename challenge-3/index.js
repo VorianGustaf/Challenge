@@ -32,3 +32,9 @@ const penambahan =Math.floor(menuItems.length /2);
 menuItems.splice(penambahan,0,newMenuItem);
 console.log(menuItems);
 
+
+//pop
+const items = ["Apple Juice", "White Coffee", "Fried Rice", "Croissant"];
+const lastItem =items.pop();
+console.log(items);
+// console.log(lastItem);
