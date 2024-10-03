@@ -18,10 +18,17 @@ const isLargeNumber = (element) => element > 6;
 
 console.log(nomor.findIndex(isLargeNumber));
 
-// shif
+// unshif
 const array1 = [1, 2, 3];
 
 console.log(array1.unshift( 7,8,9));
 
 console.log(array1);
+
+//
+const menuItems = ["Apple Juice", "White Coffee", "Fried Rice", "Croissant"];
+const newMenuItem = "Waffle";
+const penambahan =Math.floor(menuItems.length /2);
+menuItems.splice(penambahan,0,newMenuItem);
+console.log(menuItems);
 
