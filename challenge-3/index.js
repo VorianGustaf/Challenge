@@ -28,7 +28,7 @@ console.log(array1);
 //
 const menuItems = ["Apple Juice", "White Coffee", "Fried Rice", "Croissant"];
 const newMenuItem = "Waffle";
-const penambahan =Math.floor(menuItems.length /2);
+const penambahan =Math.ceil(menuItems.length /1);
 menuItems.splice(penambahan,0,newMenuItem);
 console.log(menuItems);
 
@@ -38,3 +38,21 @@ const items = ["Apple Juice", "White Coffee", "Fried Rice", "Croissant"];
 const lastItem =items.pop();
 console.log(items);
 // console.log(lastItem);
+
+//menghapus elemen-elemen di tengah
+const fruits = [
+  "Apple",
+  "Grape",
+  "Guava",
+  "Raspberry",
+  "Almond",
+  "Vine",
+  "Apricot",
+  "Tangerine",
+  "Elderberry"
+];
+// cara 1 mengunakan splice
+
+fruits.splice (4,1);
+fruits.splice (4,1);
+console.log(fruits);
