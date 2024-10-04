@@ -56,3 +56,17 @@ const fruits = [
 fruits.splice (4,1);
 fruits.splice (4,1);
 console.log(fruits);
+
+//cara 2 mengunakan splice dan indexof
+
+const indexToRemove1 = fruits.indexOf("Almond");
+if (indexToRemove1 !== -1) {
+    fruits.splice(indexToRemove1, 1);
+}
+
+const indexToRemove2 = fruits.indexOf("Vine");
+if (indexToRemove2 !== -1) {
+    fruits.splice(indexToRemove2, 1);
+}
+
+console.log(fruits);
