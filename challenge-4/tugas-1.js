@@ -1,3 +1,5 @@
+// function isPalindrome(value) { }
+
 function isPalindrome(string) {
     // Periksa apakah input valid
     if (string === undefined || string === null) {
@@ -28,3 +30,4 @@ console.log("Test 5:", isPalindrome(157751));
 
 console.log("Expecting: false");
 console.log("Test 6:", isPalindrome(3261789));
+
