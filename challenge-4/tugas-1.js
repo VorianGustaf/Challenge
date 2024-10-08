@@ -5,13 +5,28 @@ function isPalindrome(string) {
         return false;
     }
 
-    // Konversi ke huruf kecil dan hapus karakter non-alfanumerik
-    string = string.toString().toLowerCase().replace(/[^A-Za-z0-9]/g, '');
-    const length = string.length;
+    // Konversi input menjadi string jika berupa angka
+    let str = string.toString();
+    let cleanedValue = '';
+    
+    // Membersihkan string: hanya menyimpan karakter alfanumerik dan mengubah ke huruf kecil
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        // Memeriksa apakah karakter adalah huruf atau angka
+        if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || (char >= '0' && char <= '9')) {
+            // Mengubah huruf besar menjadi kecil
+            if (char >= 'A' && char <= 'Z') {
+                cleanedValue += String.fromCharCode(char.charCodeAt(0) + 32); // Mengubah ke huruf kecil
+            } else {
+                cleanedValue += char; // Menjaga karakter kecil dan angka
+            }
+        }
+    }
 
-    // Menggunakan perulangan for untuk memeriksa palindrom
+    // Memeriksa palindrom
+    const length = cleanedValue.length;
     for (let i = 0; i < length / 2; i++) {
-        if (string[i] !== string[length - 1 - i]) {
+        if (cleanedValue[i] !== cleanedValue[length - 1 - i]) {
             return false; // Jika ada karakter yang tidak cocok, bukan palindrom
         }
     }
@@ -20,21 +35,16 @@ function isPalindrome(string) {
 }
 
 // Test cases
-console.log("Expecting: true");
+
 console.log("Test 1:", isPalindrome("racecar"));
 
-console.log('Expecting: false');
 console.log('Test 2:', isPalindrome("index"));
 
-console.log("Expecting: true");
 console.log("Test 3:", isPalindrome("RacEcaR"));
 
-console.log("Expecting: false");
 console.log("Test 4:", isPalindrome());
 
-console.log("Expecting: true");
 console.log("Test 5:", isPalindrome(157751));
 
-console.log("Expecting: false");
 console.log("Test 6:", isPalindrome(3261789));
 
