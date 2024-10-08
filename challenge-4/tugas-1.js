@@ -1,5 +1,4 @@
 // function isPalindrome(value) { }
-
 function isPalindrome(string) {
     // Periksa apakah input valid
     if (string === undefined || string === null) {
@@ -7,9 +6,17 @@ function isPalindrome(string) {
     }
 
     // Konversi ke huruf kecil dan hapus karakter non-alfanumerik
-    string = string.toString().toLowerCase().replace(/[^A-Za-z0-9]/g, '');  
-    const reversed = string.split('').reverse().join(''); // Membalik string
-    return string === reversed; // Bandingkan string asli dengan yang dibalik
+    string = string.toString().toLowerCase().replace(/[^A-Za-z0-9]/g, '');
+    const length = string.length;
+
+    // Menggunakan perulangan for untuk memeriksa palindrom
+    for (let i = 0; i < length / 2; i++) {
+        if (string[i] !== string[length - 1 - i]) {
+            return false; // Jika ada karakter yang tidak cocok, bukan palindrom
+        }
+    }
+    
+    return true; // Jika semua karakter cocok, maka palindrom
 }
 
 // Test cases
