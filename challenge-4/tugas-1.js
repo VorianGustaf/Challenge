@@ -19,7 +19,6 @@ function isPalindrome(string) {
         }
     }
 
-    // Memeriksa palindrom
     const length = cleanedValue.length;
     for (let i = 0; i < length / 2; i++) {
         if (cleanedValue[i] !== cleanedValue[length - 1 - i]) {
