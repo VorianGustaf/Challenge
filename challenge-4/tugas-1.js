@@ -1,31 +1,30 @@
-// function isPalindrome(value) { }
-
 function isPalindrome(string) {
-    string = string.toLowerCase().replace(/[^A-Za-z0–9]/g);  
-    const word = [...string];
-    const baru =[];
-    word.forEach(element => {
-        baru.unshift(element);
-    });
-    const kebalik = baru.join(''); 
-    return string === kebalik ;
- }
+    // Periksa apakah input valid
+    if (string === undefined || string === null) {
+        return false;
+    }
 
- console.log("Expecting: true");
-  console.log("Test 1:", isPalindrome("racecar"))
+    // Konversi ke huruf kecil dan hapus karakter non-alfanumerik
+    string = string.toString().toLowerCase().replace(/[^A-Za-z0-9]/g, '');  
+    const reversed = string.split('').reverse().join(''); // Membalik string
+    return string === reversed; // Bandingkan string asli dengan yang dibalik
+}
 
-  console.log('Expecting: false');
-  console.log('Test 2:', isPalindrome("index"))
+// Test cases
+console.log("Expecting: true");
+console.log("Test 1:", isPalindrome("racecar"));
 
-  console.log("Expecting: true");
-  console.log("Test 3:", isPalindrome("RacEcaR"));
+console.log('Expecting: false');
+console.log('Test 2:', isPalindrome("index"));
 
-  console.log("Expecting: false");
-  console.log("Test 4:", isPalindrome());
+console.log("Expecting: true");
+console.log("Test 3:", isPalindrome("RacEcaR"));
 
-  console.log("Expecting: true");
-  console.log("Test 5:", isPalindrome(157751));
+console.log("Expecting: false");
+console.log("Test 4:", isPalindrome());
 
-  console.log("Expecting: false");
-  console.log("Test 6:", isPalindrome(3261789));
+console.log("Expecting: true");
+console.log("Test 5:", isPalindrome(157751));
 
+console.log("Expecting: false");
+console.log("Test 6:", isPalindrome(3261789));
