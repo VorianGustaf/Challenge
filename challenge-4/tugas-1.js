@@ -1,16 +1,13 @@
- function isPalindrome(input) { 
-
-if (input === undefined) return false;
-
-let str = '';
-if (typeof input === 'number') {
-    str = String(input);
-} else if (typeof input === 'string') {
-    str = input;
-} else {
-    return false; 
+function isPalindrome(input) {
+    if (input === undefined) return false;
+    let str = '';
+    if (typeof input === 'number') {
+        str = String(input);
+    } else if (typeof input === 'string') {
+        str = input;
+    } else {
+        return false; 
 }
-
 let cleanedStr = '';
 for (let i = 0; i < str.length; i++) {
     if (str[i] !== ' ') {
