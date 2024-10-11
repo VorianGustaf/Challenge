@@ -1,33 +1,32 @@
-// function isPalindrome(value) { }
-function isPalindrome(string) {
-    if (string === undefined || string === null) {
+ function isPalindrome(input) { 
+
+if (input === undefined) return false;
+
+let str = '';
+if (typeof input === 'number') {
+    str = String(input);
+} else if (typeof input === 'string') {
+    str = input;
+} else {
+    return false; 
+}
+
+let cleanedStr = '';
+for (let i = 0; i < str.length; i++) {
+    if (str[i] !== ' ') {
+        cleanedStr += str[i].toLowerCase();
+    }
+}
+
+let length = cleanedStr.length;
+for (let i = 0; i < length / 2; i++) {
+    if (cleanedStr[i] !== cleanedStr[length - 1 - i]) {
         return false;
     }
-
-
-    let str = string.toString();
-    let cleanedValue = '';
-
-    for (let i = 0; i < str.length; i++) {
-        const char = str[i];
-        if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || (char >= '0' && char <= '9')) {
-            if (char >= 'A' && char <= 'Z') {
-                cleanedValue += String.fromCharCode(char.charCodeAt(0) + 32); 
-            } else {
-                cleanedValue += char; 
-            }
-        }
-    }
-
-    const length = cleanedValue.length;
-    for (let i = 0; i < length / 2; i++) {
-        if (cleanedValue[i] !== cleanedValue[length - 1 - i]) {
-            return false; 
-        }
-    }
-    
-    return true; 
 }
+return true;
+}
+
 
 // Test cases
 
