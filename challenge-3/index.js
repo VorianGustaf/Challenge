@@ -1,4 +1,4 @@
-// // fungsi find
+// fungsi find
 // const numbers = [4, 9 ,16, 25];
 // const result = numbers.find(function(number) {
 //     return number > 100;
@@ -6,13 +6,13 @@
 //   console.log(result);
 
 // fungsi filter
-// const angka = [1, 3, "6", true, 11];
-// const hasil =angka.filter(function(angka) {
-//   console.log(this);
-//   return angka > 50; 
+const angka = [1, 3, "6", true, 11];
+const hasil =angka.filter(function(angka) {
+  
+  return angka > 4; 
 
-// });
-// console.log(hasil);
+});
+console.log(hasil);
 
 // //  fungsi findInddex
 // const nomor =[2,5,6,9,12];
